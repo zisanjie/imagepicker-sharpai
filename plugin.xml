@@ -125,7 +125,7 @@
                     <action android:name="com.synconset.MultiImageChooserActivity" />
                 </intent-filter>
             </activity>
-       	<activity
+       	<!--<activity
             android:name="com.photoselector.ui.PhotoSelectorActivity"
             android:label="图片选择" >
         </activity>
@@ -136,22 +136,18 @@
         <activity
             android:name="com.photoselector.ui.PhotoSelectorPreview"
             android:label="点击图片" >
-        </activity>
+        </activity>-->
 		</config-file>
 		
 		<config-file target="AndroidManifest.xml" parent="/manifest">
 		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 		</config-file>
 
-		<framework src="src/android/Library/Android-Ultra-Photo-Selector" custom="true"/>
-		
-
 		<source-file src="src/android/com/synconset/ImagePicker/ImagePicker.java" target-dir="src/com/synconset" />
 		<source-file src="src/android/com/synconset/ImagePicker/FakeR.java" target-dir="src/com/synconset" />
 		
 		<source-file src="src/android/Library/src/ImageFetcher.java" target-dir="src/com/synconset"/>
 		<source-file src="src/android/Library/src/MultiImageChooserActivity.java" target-dir="src/com/synconset"/>
-		<source-file src="src/android/Library/src/ImageInfo.java" target-dir="src/com/synconset"/>
 		
         <source-file src="src/android/Library/res/anim/image_pop_in.xml" target-dir="res/anim"/>
 		<source-file src="src/android/Library/res/drawable/grid_background.xml" target-dir="res/drawable"/>
@@ -173,5 +169,12 @@
 		<source-file src="src/android/Library/res/layout/multiselectorgrid.xml" target-dir="res/layout"/>
 		<source-file src="src/android/Library/res/values/multiimagechooser_strings_en.xml" target-dir="res/values"/>
 		<source-file src="src/android/Library/res/values/themes.xml" target-dir="res/values"/>
+		
+		<source-file src="src/android/Library/res/values-de/multiimagechooser_strings_de.xml" target-dir="res/values-de"/>
+		<source-file src="src/android/Library/res/values-es/multiimagechooser_strings_es.xml" target-dir="res/values-es"/>
+		<source-file src="src/android/Library/res/values-fr/multiimagechooser_strings_fr.xml" target-dir="res/values-fr"/>
+		<source-file src="src/android/Library/res/values-hu/multiimagechooser_strings_hu.xml" target-dir="res/values-hu"/>
+		<source-file src="src/android/Library/res/values-ja/multiimagechooser_strings_ja.xml" target-dir="res/values-ja"/>
+		<source-file src="src/android/Library/res/values-ko/multiimagechooser_strings_ko.xml" target-dir="res/values-ko"/>
 	</platform>
 </plugin>
