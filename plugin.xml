@@ -5,16 +5,16 @@
   version="1.0.6">
 
 	<name>ImagePicker</name>
-	 
+
 	<description>
 		This plugin allows selection of multiple images from the camera roll / gallery in a phonegap app
 	</description>
-	
+
 	<license>MIT</license>
 
 	<engines>
 		<engine name="cordova" version=">=3.0.0" />
-	</engines>  
+	</engines>
 
 	<js-module src="www/imagepicker.js" name="ImagePicker">
 		<clobbers target="plugins.imagePicker" />
@@ -118,14 +118,14 @@
 				<param name="android-package" value="com.synconset.ImagePicker"/>
 			</feature>
 		</config-file>
-		
+
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:label="@string/multi_app_name" android:name="com.synconset.MultiImageChooserActivity" android:theme="@android:style/Theme.Holo.Light">
                 <intent-filter>
                     <action android:name="com.synconset.MultiImageChooserActivity" />
                 </intent-filter>
             </activity>
-       	<!--<activity
+       	<activity
             android:name="com.photoselector.ui.PhotoSelectorActivity"
             android:label="图片选择" >
         </activity>
@@ -136,20 +136,56 @@
         <activity
             android:name="com.photoselector.ui.PhotoSelectorPreview"
             android:label="点击图片" >
-        </activity>-->
+        </activity>
 		</config-file>
-		
+
 		<config-file target="AndroidManifest.xml" parent="/manifest">
 		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 		</config-file>
 
+		<!--<framework src="src/android/Library/Android-Ultra-Photo-Selector" custom="true"/>-->
+
+    <source-file src="src/android/Library/libs/universal-image-loader-1.9.3-with-sources.jar" target-dir="libs" />
+
 		<source-file src="src/android/com/synconset/ImagePicker/ImagePicker.java" target-dir="src/com/synconset" />
 		<source-file src="src/android/com/synconset/ImagePicker/FakeR.java" target-dir="src/com/synconset" />
-		
+
+    <source-file src="src/android/Library/src/com/polites/Animation.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/Animator.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/FlingAnimation.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/FlingAnimationListener.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/FlingListener.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/GestureImageView.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/GestureImageViewListener.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/GestureImageViewTouchListener.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/MathUtils.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/MoveAnimation.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/MoveAnimationListener.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/VectorF.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/ZoomAnimation.java" target-dir="src/com/polites" />
+    <source-file src="src/android/Library/src/com/polites/ZoomAnimationListener.java" target-dir="src/com/polites" />
+
+    <source-file src="src/android/Library/src/com/photoselector/controller/AlbumController.java" target-dir="src/com/photoselector/controller" />
+    <source-file src="src/android/Library/src/com/photoselector/domain/PhotoSelectorDomain.java" target-dir="src/com/photoselector/domain" />
+    <source-file src="src/android/Library/src/com/photoselector/model/AlbumModel.java" target-dir="src/com/photoselector/model" />
+    <source-file src="src/android/Library/src/com/photoselector/model/PhotoModel.java" target-dir="src/com/photoselector/model" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/AlbumAdapter.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/AlbumItem.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/BasePhotoPreviewActivity.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/MBaseAdapter.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/PhotoItem.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/PhotoPreview.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/PhotoPreviewActivity.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/PhotoSelectorActivity.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/ui/PhotoSelectorAdapter.java" target-dir="src/com/photoselector/ui" />
+    <source-file src="src/android/Library/src/com/photoselector/util/AnimationUtil.java" target-dir="src/com/photoselector/util" />
+    <source-file src="src/android/Library/src/com/photoselector/util/CommonUtils.java" target-dir="src/com/photoselector/util" />
+
 		<source-file src="src/android/Library/src/ImageFetcher.java" target-dir="src/com/synconset"/>
 		<source-file src="src/android/Library/src/MultiImageChooserActivity.java" target-dir="src/com/synconset"/>
-		
-        <source-file src="src/android/Library/res/anim/image_pop_in.xml" target-dir="res/anim"/>
+		<source-file src="src/android/Library/src/ImageInfo.java" target-dir="src/com/synconset"/>
+
+    <source-file src="src/android/Library/res/anim/image_pop_in.xml" target-dir="res/anim"/>
 		<source-file src="src/android/Library/res/drawable/grid_background.xml" target-dir="res/drawable"/>
 		<source-file src="src/android/Library/res/drawable-hdpi/image_bg.9.png" target-dir="res/drawable-hdpi"/>
 		<source-file src="src/android/Library/res/drawable-hdpi/loading_icon.png" target-dir="res/drawable-hdpi"/>
@@ -162,19 +198,59 @@
 		<source-file src="src/android/Library/res/drawable-xhdpi/ic_action_discard_light.png" target-dir="res/drawable-xhdpi"/>
 		<source-file src="src/android/Library/res/drawable-xhdpi/ic_action_done_dark.png" target-dir="res/drawable-xhdpi"/>
 		<source-file src="src/android/Library/res/drawable-xhdpi/ic_action_done_light.png" target-dir="res/drawable-xhdpi"/>
+    <source-file src="src/android/Library/res/drawable-xxhdpi/arrow.png" target-dir="res/drawable-xxhdpi"/>
 		<source-file src="src/android/Library/res/drawable-xhdpi/ic_launcher.png" target-dir="res/drawable-xhdpi"/>
 		<source-file src="src/android/Library/res/layout/actionbar_custom_view_done_discard.xml" target-dir="res/layout"/>
 		<source-file src="src/android/Library/res/layout/actionbar_discard_button.xml" target-dir="res/layout"/>
 		<source-file src="src/android/Library/res/layout/actionbar_done_button.xml" target-dir="res/layout"/>
 		<source-file src="src/android/Library/res/layout/multiselectorgrid.xml" target-dir="res/layout"/>
 		<source-file src="src/android/Library/res/values/multiimagechooser_strings_en.xml" target-dir="res/values"/>
-		<source-file src="src/android/Library/res/values/themes.xml" target-dir="res/values"/>
-		
-		<source-file src="src/android/Library/res/values-de/multiimagechooser_strings_de.xml" target-dir="res/values-de"/>
-		<source-file src="src/android/Library/res/values-es/multiimagechooser_strings_es.xml" target-dir="res/values-es"/>
-		<source-file src="src/android/Library/res/values-fr/multiimagechooser_strings_fr.xml" target-dir="res/values-fr"/>
-		<source-file src="src/android/Library/res/values-hu/multiimagechooser_strings_hu.xml" target-dir="res/values-hu"/>
-		<source-file src="src/android/Library/res/values-ja/multiimagechooser_strings_ja.xml" target-dir="res/values-ja"/>
-		<source-file src="src/android/Library/res/values-ko/multiimagechooser_strings_ko.xml" target-dir="res/values-ko"/>
+		<source-file src="src/android/Library/res/values/themes_imagepicker.xml" target-dir="res/values"/>
+
+    <source-file src="src/android/Library/res/anim/activity_alpha_action_in.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/anim/pb_default.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/anim/translate_down.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/anim/translate_down_current.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/anim/translate_up.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/anim/translate_up_current.xml" target-dir="res/anim"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_album_border.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_dark.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_dark_translucent.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_grey_dark.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_title.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_title_normal.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/bg_title_pressed.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_back_arrow_white_normal.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_back_arrow_white_pressed.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_camera_normal.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_camera_pressed.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_checkbox_normal.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_checkbox_pressed.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_choice_green.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_loading_white.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_picture_loadfailed.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_picture_loading.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_spinner_white.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-hdpi/ic_title_btn_back.png" target-dir="res/drawable-hdpi"/>
+    <source-file src="src/android/Library/res/drawable-xhdpi/ic_checkbox_normal.png" target-dir="res/drawable-xhdpi"/>
+    <source-file src="src/android/Library/res/drawable-xhdpi/ic_checkbox_pressed.png" target-dir="res/drawable-xhdpi"/>
+    <source-file src="src/android/Library/res/drawable/bg_back_arrow_white_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/bg_dark_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/btn_back_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/btn_black_textcolor_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/btn_camera_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/btn_checkbox_selector.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/drawable/btn_green_selector_rectangle.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/Library/res/layout/activity_photopreview.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/layout/activity_photoselector.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/layout/layout_album.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/layout/layout_photoitem.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/layout/view_camera.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/layout/view_photopreview.xml" target-dir="res/layout"/>
+    <source-file src="src/android/Library/res/values/colors_imagepicker.xml" target-dir="res/values"/>
+    <source-file src="src/android/Library/res/values/dimens_imagepicker.xml" target-dir="res/values"/>
+    <source-file src="src/android/Library/res/values/strings_imagepicker.xml" target-dir="res/values"/>
+    <source-file src="src/android/Library/res/values/styles_imagepicker.xml" target-dir="res/values"/>		
 	</platform>
 </plugin>
