@@ -6,6 +6,7 @@ package com.photoselector.ui;
  */
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
@@ -189,6 +190,7 @@ public class PhotoSelectorActivity extends Activity implements
 
 	@Override
 	public void onClick(View v) {
+
 		if (v.getId() == R.id.btn_right_lh)
 			ok(); // 选完照片
 		else if (v.getId() == R.id.tv_album_ar)
@@ -471,9 +473,9 @@ public class PhotoSelectorActivity extends Activity implements
 		    		}
 		            int index = filename.lastIndexOf('.');
 		            String ext = filename.substring(index);
-		            if (ext.compareToIgnoreCase(".gif") != 0) {
 		            filename = filename.replaceAll("file://", "");
 		            File file = new File(filename);
+		            if (ext.compareToIgnoreCase(".gif") != 0) {
 				    BitmapFactory.Options options = new BitmapFactory.Options();
 				    options.inSampleSize = 1;
 				    options.inJustDecodeBounds = true;
@@ -531,7 +533,8 @@ public class PhotoSelectorActivity extends Activity implements
 		            }
 		            else
 		            {
-		                al.add(filename);
+				file = this.copyImage(file);
+				al.add(Uri.fromFile(file).toString());
 		            }
 		    	}
 
@@ -616,6 +619,26 @@ public class PhotoSelectorActivity extends Activity implements
             bmp.compress(Bitmap.CompressFormat.JPEG, quality, outStream);
             outStream.flush();
             outStream.close();
+            return file;
+        }
+        private File copyImage(File srcfile) throws IOException {
+            byte[] buf = new byte[4*1024];
+            int b = 0;
+            String fileName = srcfile.getName();
+            int index = fileName.lastIndexOf('.');
+            String name = "Temp_" + fileName.substring(0, index).replaceAll("([^a-zA-Z0-9])", "");
+            String ext = fileName.substring(index);
+            File file = File.createTempFile(name, ext);
+
+            OutputStream outStream = new FileOutputStream(file);
+            FileInputStream inStream = new FileInputStream(srcfile.getAbsolutePath());
+            while((b=inStream.read(buf, 0, buf.length))!=-1){
+                outStream.write(buf, 0, b);
+                outStream.flush();
+            }
+            outStream.flush();
+            outStream.close();
+            inStream.close();
             return file;
         }
 
