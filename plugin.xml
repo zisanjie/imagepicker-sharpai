@@ -145,7 +145,8 @@
 
 		<!--<framework src="src/android/Library/Android-Ultra-Photo-Selector" custom="true"/>-->
 
-    <source-file src="src/android/Library/libs/universal-image-loader-1.9.3-with-sources.jar" target-dir="libs" />
+    <!--<source-file src="src/android/Library/libs/universal-image-loader-1.9.3-with-sources.jar" target-dir="libs" />-->
+    <source-file src="src/android/Library/libs/glide-3.7.0.jar" target-dir="libs" />
 
 		<source-file src="src/android/com/synconset/ImagePicker/ImagePicker.java" target-dir="src/com/synconset" />
 		<source-file src="src/android/com/synconset/ImagePicker/FakeR.java" target-dir="src/com/synconset" />
