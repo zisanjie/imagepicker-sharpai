@@ -47,6 +47,10 @@ static NSString* const dnalbumTableViewCellReuseIdentifier = @"dnalbumTableViewC
      {
          weakSelf.assetsGroups = groupAssets;
          [weakSelf.tableView reloadData];
+         if (weakSelf.assetsGroups.count == 0 ) {
+             
+             [weakSelf noImage];
+         }
      }];
 }
 
@@ -66,6 +70,28 @@ static NSString* const dnalbumTableViewCellReuseIdentifier = @"dnalbumTableViewC
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:dnalbumTableViewCellReuseIdentifier];
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.tableFooterView = view;
+    
+    
+}
+-(void)noImage{
+    UILabel *label = [[UILabel alloc] init];
+    label.center = self.view.center;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"无照片";
+    label.font = [UIFont systemFontOfSize:18];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    //创建x居中的约束
+    NSLayoutConstraint * constraintx = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    //创建y居中的约束
+    NSLayoutConstraint * constrainty = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:-15];
+    //创建宽度约束
+    NSLayoutConstraint * constraintw = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    //创建高度约束
+    NSLayoutConstraint * constrainth = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:30];
+    //添加约束之前，必须将视图加在父视图上
+    [self.view addSubview:label];
+    [self.view addConstraints:@[constraintx,constrainty,constrainth,constraintw]];
+    
 }
 
 
