@@ -19,7 +19,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 
 import com.photoselector.model.PhotoModel;
 import com.polites.GestureImageView;

@@ -43,7 +43,7 @@ import android.widget.Toast;
 
 
 
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 
 import com.photoselector.domain.PhotoSelectorDomain;
 import com.photoselector.model.AlbumModel;

@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 
 import com.photoselector.model.PhotoModel;
 

@@ -13,7 +13,7 @@ import android.os.Message;
 import android.provider.MediaStore.Images.ImageColumns;
 import android.provider.MediaStore.Images.Media;
 
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 import com.photoselector.model.AlbumModel;
 import com.photoselector.model.PhotoModel;
 

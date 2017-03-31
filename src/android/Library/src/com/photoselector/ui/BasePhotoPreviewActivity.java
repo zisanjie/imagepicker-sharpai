@@ -20,7 +20,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 import com.photoselector.model.PhotoModel;
 import com.photoselector.util.AnimationUtil;
 

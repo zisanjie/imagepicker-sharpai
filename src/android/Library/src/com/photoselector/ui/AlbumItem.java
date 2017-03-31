@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import org.hotshare.everywhere.R;
+import org.workai.everywhere.R;
 import com.photoselector.model.AlbumModel;
 
 public class AlbumItem extends LinearLayout {
