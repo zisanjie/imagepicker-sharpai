@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView.LayoutParams;
 import android.widget.TextView;
 
-import org.workai.everywhere.R;
+import org.sharpai.everywhere.R;
 import com.photoselector.model.PhotoModel;
 import com.photoselector.ui.PhotoItem.onItemClickListener;
 import com.photoselector.ui.PhotoItem.onPhotoItemCheckedListener;
