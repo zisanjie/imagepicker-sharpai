@@ -2,7 +2,10 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
-        multiDexEnabled true
+    }
+    
+    dexOptions {
+        jumboMode true
     }
 
    packagingOptions {
