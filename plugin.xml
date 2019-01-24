@@ -125,27 +125,26 @@
                     <action android:name="com.synconset.MultiImageChooserActivity" />
                 </intent-filter>
             </activity>
-           	<activity
-                android:name="com.photoselector.ui.PhotoSelectorActivity"
-                android:label="图片选择" >
-            </activity>
-            <activity
-                android:name="com.photoselector.ui.PhotoPreviewActivity"
-                android:label="图片预览" >
-            </activity>
-            <activity
-                android:name="com.photoselector.ui.PhotoSelectorPreview"
-                android:label="点击图片" >
-            </activity>
-            <activity
-                android:configChanges="orientation|screenSize"
-                android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
-                android:label="图片选择" >
-            </activity>
+       	<activity
+            android:name="com.photoselector.ui.PhotoSelectorActivity"
+            android:label="图片选择" >
+        </activity>
+        <activity
+            android:name="com.photoselector.ui.PhotoPreviewActivity"
+            android:label="图片预览" >
+        </activity>
+        <activity
+            android:name="com.photoselector.ui.PhotoSelectorPreview"
+            android:label="点击图片" >
+        </activity>
+        <activity
+            android:configChanges="orientation|screenSize"
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:label="图片选择" >
+        </activity>
 		</config-file>
 
 		<config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.CAMERA"/>
